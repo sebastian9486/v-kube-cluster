@@ -1,3 +1,25 @@
 = v-kube-cluster
 
-Virtual Kubernetes Cluster using VirtualBox and Vagrant
+Virtual Kubernetes Cluster using Vagrant and Virtualbox
+
+.See
+* !!! https://developers.caffeina.com/a-kubernetes-cluster-on-virtualbox-20d64666a678 -> Go on from "Management"
+* ??? https://github.com/ecomm-integration-ballerina/kubernetes-cluster
+
+.TODO
+* switch VMs to DHCP, use Nameserver
+** Whats the vagrant / virtualbox way?
+** Additional DHCP server (in Docker?) running on host?
+* Move kube-flannel.yml to this repo -> src/main/kube-cluster/resources
+* *ERROR* "v-k8s-master: The connection to the server localhost:8080 was refused - did you specify the right host or port?" during master setup
+* *ERROR* "v-k8s-worker-01: Host key verification failed." during step "join kubernetes cluster"
+* *Kubernetes Web Console? How to access ??? Ports ???*
+
+.Port-Range
+. s-k8s-master -> 9xxx
+. s-k8s-worker-01 -> 91xx
+. s-k8s-worker-01 -> 92xx
+
+CAUTION: Don't overlap with other services (e.g. 9110 = cadvisor) -> MOVE KUBERNETES PORTS TO DIFFERENT RANGE? 10xxx / 6xxx ???
+
+Access Web Console: ?????
