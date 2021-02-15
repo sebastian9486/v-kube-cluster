@@ -13,5 +13,7 @@ echo "[DONE] deployed dashboard"
 kubectl proxy
 echo "[DONE] Created a secure channel to kubernetes cluster to access dashboard from local workstation"
 
+
+
 echo "[DONE] ----- finished application deployment: dashboard -----------------"
 echo
