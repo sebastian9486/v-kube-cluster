@@ -1,1 +1,5 @@
-include::docs/modules/ROOT/pages/index.adoc[]
+= v-kube-cluster
+
+Virtual Kubernetes Cluster using Vagrant and Virtualbox.
+
+For full documentation see https://www.alles-und-nichts.com/docs/public/v-kube-cluster-docs
