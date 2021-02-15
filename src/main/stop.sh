@@ -3,10 +3,7 @@
 # load common vars
 source ./vars.sh
 
-echo -e "$LOG_INFO ------------------------------------------------------------------"
 echo -e "$LOG_INFO Shutting down Vagrant Boxes"
-echo -e "$LOG_INFO ------------------------------------------------------------------"
-
 cd kube-cluster
 vagrant halt
 cd ..

@@ -3,10 +3,6 @@
 # load common vars
 source ./vars.sh
 
-echo -e "$LOG_INFO ------------------------------------------------------------------"
-echo -e "$LOG_INFO Cleanup"
-echo -e "$LOG_INFO ------------------------------------------------------------------"
-
 echo -e "$LOG_INFO Remove all virtual machines created for the kubernetes cluster"
 cd kube-cluster
 vagrant destroy -f
