@@ -7,7 +7,7 @@ Repository: https://github.com/sebastian9486/v-kube-cluster
 .Local management console
 * http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy
 * link:https://github.com/kubernetes/dashboard[Application 'dashboard' must be deployed] and since the web UI can only be accessed using localhost address on the machine it runs on, link:https://upcloud.com/community/tutorials/deploy-kubernetes-dashboard[we need to have an SSH tunnel to the server].
-* Copy bearer token from console output
+* Copy bearer token from console output for ui login
 
 == Setup
 === Components
