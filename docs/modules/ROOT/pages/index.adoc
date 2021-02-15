@@ -21,7 +21,6 @@ Repository: https://github.com/sebastian9486/v-kube-cluster
 .. Ansible playbooks to provision the master and all worker nodes
 .. Application Deploments in startup script
 
-
 === Adjustments and Fixes
 
 * Cluster setup follows instructions from https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant
