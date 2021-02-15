@@ -1,0 +1,23 @@
+= v-kube-cluster
+
+Virtual Kubernetes Cluster using Vagrant and Virtualbox.
+
+Repository: https://github.com/sebastian9486/v-kube-cluster
+
+== Setup
+
+* Cluster setup follows instructions from https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant
+** Changes to "master-playbook.yml"
+*** Added `create: yes` to step "Configure node ip" to avoid crashes during provisioning
+*** Changed URL and command in step "Install calico pod network"
+*** Changed location of generated join-command in step "Copy join command to local file"
+** Changes to "worker-node-playbook.yml"
+*** Added `create: yes` to step "Configure node ip" to avoid crashes during provisioning
+*** Changed location of generated join-command in step "Copy the join command to server location"
+
+== Todo
+
+* switch VMs to DHCP, use Nameserver
+** Whats the vagrant / virtualbox way?
+** Additional DHCP server (in Docker?) running on host?
+* *Kubernetes Web Console? How to access ??? Ports ???*

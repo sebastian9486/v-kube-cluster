@@ -1,3 +1,1 @@
-= v-kube-cluster
-
-Virtual Kubernetes Cluster using VirtualBox and Vagrant
+include::docs/modules/ROOT/pages/index.adoc[]
