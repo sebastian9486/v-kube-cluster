@@ -5,7 +5,6 @@ source ./vars.sh
 
 cd kube-cluster
 
-echo
 echo -e "$LOG_INFO Deploy and configure application 'dashboard'"
 
 echo -e "$LOG_INFO Start deployment"
