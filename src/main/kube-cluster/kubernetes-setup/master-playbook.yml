@@ -110,6 +110,13 @@
     command: kubeadm token create --print-join-command
     register: join_command
 
+  - name: Make sure target directory is present on host machine
+    file:
+      path: ../../../../target
+      state: directory
+    delegate_to: localhost
+    become: false
+
   - name: Copy join command to local file
     local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="../../../../target/join_command.sh"
     become: false
