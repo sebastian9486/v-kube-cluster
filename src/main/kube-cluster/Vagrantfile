@@ -1,5 +1,5 @@
 IMAGE_NAME = "bento/ubuntu-16.04" # ubuntu/focal64
-N = 1 # number of worker nodes
+N = 3 # number of worker nodes
 
 Vagrant.configure("2") do |config|
     config.ssh.insert_key = false
