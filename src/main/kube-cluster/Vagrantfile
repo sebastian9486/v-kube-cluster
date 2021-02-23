@@ -1,4 +1,4 @@
-IMAGE_NAME = "bento/ubuntu-16.04" # ubuntu/focal64
+IMAGE_NAME = "ubuntu/focal64" # bento/ubuntu-16.04
 N = 3 # number of worker nodes
 
 Vagrant.configure("2") do |config|
