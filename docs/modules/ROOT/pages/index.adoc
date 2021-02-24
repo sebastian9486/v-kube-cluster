@@ -5,22 +5,23 @@ Virtual Kubernetes Cluster using Vagrant and Virtualbox.
 Repository: https://github.com/sebastian9486/v-kube-cluster
 
 .Local management console
-* http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy
+* http://localhost:8080/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy
 * link:https://github.com/kubernetes/dashboard[Application 'dashboard' must be deployed] and since the web UI can only be accessed using localhost address on the machine it runs on, link:https://upcloud.com/community/tutorials/deploy-kubernetes-dashboard[we need to have an SSH tunnel to the server].
 * Copy bearer token from console output for ui login
 
 == Setup
 === Components
 
-. monitoring-logging
-.. prometheus in docker
-.. graylog in docker
-.. grafana in docker
-- kube-cluster
+. *Docker*
+.. Prometheus
+.. Blackbox Exporter
+.. Graylog
+.. Grafana
+.. Some DNS Server
+. *Vagrantboxes*
 .. Vagrant file to create a kubernetes master and N worker nodes.
 .. Ansible playbooks to provision the master and all worker nodes
-.. Application Deploments in startup script
-
+.. Application Deploments in scripts
 
 === Adjustments and Fixes
 
