@@ -3,6 +3,10 @@
 # load common vars
 source ../../vars.sh
 
+################################################################################
+#    dashboard                                                                 #
+################################################################################
+
 echo -e "$LOG_INFO Start deployment of application: dashboard"
 echo -e "$LOG_INFO Start deployment"
 vagrant ssh v-k8s-master -c 'kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml'
@@ -43,7 +47,16 @@ echo -e "$LOG_DONE -------------------------------------------------------------
 echo -e "$LOG_DONE Deployed application: dashboard"
 echo -e "$LOG_DONE ------------------------------------------------------------------"
 
-vagrant ssh v-k8s-master -c "kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='.*' &"
-echo -e "$LOG_DONE Started kube proxy on v-kube-master machine"
 echo -e "$LOG_INFO http://localhost:8001/ui"
 echo -e "$LOG_INFO http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
+
+################################################################################
+#    metrics-server                                                            #
+################################################################################
+
+echo -e "$LOG_INFO Start deployment of application: metrics-server"
+echo -e "$LOG_INFO Start deployment"
+vagrant ssh v-k8s-master -c 'kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml'
+echo -e "$LOG_DONE ------------------------------------------------------------------"
+echo -e "$LOG_DONE Deployed application: metrics-server"
+echo -e "$LOG_DONE ------------------------------------------------------------------"

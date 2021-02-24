@@ -4,13 +4,21 @@ Virtual Kubernetes Cluster using Vagrant and Virtualbox.
 
 Repository: https://github.com/sebastian9486/v-kube-cluster
 
+== How to Use
+
+. Start cluster using `src/main/start.sh`
+. Deploy all needed applications from `src/main/kube-cluster/deploy` folder
+. To access services, run kubectl proxy using `src/main/proxyon.sh`
+. Stop cluster using `src/main/stop.sh`
+. Clean up everything using `src/main/clean.sh` -> all vagrant boxes and docker containers are deleted, next startup resets all services from scratch.
+
 .Local management console
-* http://localhost:8080/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy
 * link:https://github.com/kubernetes/dashboard[Application 'dashboard' must be deployed] and since the web UI can only be accessed using localhost address on the machine it runs on, link:https://upcloud.com/community/tutorials/deploy-kubernetes-dashboard[we need to have an SSH tunnel to the server].
-* Copy bearer token from console output for ui login
+** Access Dashboard using URL http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/ and copied bearer token from console output
 
 == Setup
 === Components
+List of services started by this project.
 
 . *Docker*
 .. Prometheus
@@ -24,6 +32,7 @@ Repository: https://github.com/sebastian9486/v-kube-cluster
 .. Application Deploments in scripts
 
 === Adjustments and Fixes
+Additional setup steps and changes to the original guides needed to run all services from this project.
 
 * Cluster setup follows instructions from https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant
 ** Changes to "master-playbook.yml"
@@ -33,10 +42,3 @@ Repository: https://github.com/sebastian9486/v-kube-cluster
 ** Changes to "worker-node-playbook.yml"
 *** Added `create: yes` to step "Configure node ip" to avoid crashes during provisioning
 *** Changed location of generated join-command in step "Copy the join command to server location"
-
-== Todo
-
-* switch VMs to DHCP, use Nameserver
-** Whats the vagrant / virtualbox way?
-** Additional DHCP server (in Docker?) running on host?
-* *Kubernetes Web Console? How to access ??? Ports ???*
