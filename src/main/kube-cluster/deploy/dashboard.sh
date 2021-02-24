@@ -43,7 +43,7 @@ echo -e "$LOG_DONE -------------------------------------------------------------
 echo -e "$LOG_DONE Deployed application: dashboard"
 echo -e "$LOG_DONE ------------------------------------------------------------------"
 
-vagrant ssh v-k8s-master -c "kubectl proxy --address='0.0.0.0' --port=8080 --accept-hosts='.*' &"
+vagrant ssh v-k8s-master -c "kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='.*' &"
 echo -e "$LOG_DONE Started kube proxy on v-kube-master machine"
-echo -e "$LOG_INFO http://192.168.50.10:8080/ui"
-echo -e "$LOG_INFO http://192.168.50.10:8080/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
+echo -e "$LOG_INFO http://localhost:8001/ui"
+echo -e "$LOG_INFO http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
